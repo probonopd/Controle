@@ -16,9 +16,10 @@ script:
   - make -j$(nproc)
   - # Dear upstream developer, please support this: make INSTALL_ROOT=appdir install ; find appdir/
   - mkdir -p appdir/usr/bin
+  - cp Controle appdir/usr/bin/
   - mkdir -p appdir/usr/share/{applications,icons}
   - touch controle.png # Dear upstream developer, please provide icon
-  - cp controle.desktop appdir/usr/share/
+  - cp controle.desktop appdir/usr/share/applications/
 
 after_success:
   - wget -c "https://github.com/probonopd/linuxdeployqt/releases/download/continuous/linuxdeployqt-continuous-x86_64.AppImage" 
