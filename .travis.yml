@@ -17,8 +17,8 @@ script:
   - # Dear upstream developer, please support this: make INSTALL_ROOT=appdir install ; find appdir/
   - mkdir -p appdir/usr/bin
   - cp Controle appdir/usr/bin/
-  - mkdir -p appdir/usr/share/{applications,icons}
-  - touch controle.png # Dear upstream developer, please provide icon
+  - mkdir -p appdir/usr/share/{applications,pixmaps}
+  - touch appdir/usr/share/pixmaps/controle.png # Dear upstream developer, please provide an icon
   - cp controle.desktop appdir/usr/share/applications/
   - wget -c "https://github.com/probonopd/linuxdeployqt/releases/download/continuous/linuxdeployqt-continuous-x86_64.AppImage" 
   - chmod a+x linuxdeployqt*.AppImage
