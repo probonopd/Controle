@@ -14,7 +14,11 @@ install:
 script:
   - qmake PREFIX=/usr
   - make -j$(nproc)
-  - make INSTALL_ROOT=appdir install ; find appdir/
+  - # Dear upstream developer, please support this: make INSTALL_ROOT=appdir install ; find appdir/
+  - mkdir -p appdir/usr/bin
+  - mkdir -p appdir/usr/share/{applications,icons}
+  - touch controle.png # Dear upstream developer, please provide icon
+  - cp controle.desktop appdir/usr/share/
 
 after_success:
   - wget -c "https://github.com/probonopd/linuxdeployqt/releases/download/continuous/linuxdeployqt-continuous-x86_64.AppImage" 
